@@ -12,7 +12,6 @@ import java.time.Duration
 class WebClientConfig {
     @Bean
     fun webClient(): WebClient {
-
         return WebClient.builder()
             .filter { req, next ->
                 next.exchange(req).transformDeferred(RateLimiterOperator.of(rateLimiter()))
