@@ -1,0 +1,6 @@
+resilience4j.ratelimiter:
+  instances:
+    externalApiService:
+      limitForPeriod: 1
+      limitRefreshPeriod: 1s
+      timeoutDuration: 1s

@@ -7,13 +7,13 @@ import org.springframework.web.client.RestTemplate
 
 @RateLimiter(name = "externalApiService")
 @Service
-class RateLimiterRestTemplateService(
-    @Qualifier("restTemplateProgrammatic")
+class RateLimiterRestTemplateAppYmlService(
+    @Qualifier("restTemplateWithYml")
     private val restTemplate: RestTemplate
 ) {
 
     fun makeRequestRestTemplate() {
-        println("restTemplateProgrammatic")
+        println("restTemplateWithYml")
         for (i in 1..20) {
             val responese = restTemplate.getForObject("http://localhost:8070/demo", String::class.java)
             println(i)
